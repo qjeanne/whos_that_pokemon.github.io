@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Pokemon";
+  src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot");
+  src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon") format("svg")
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #ff5416;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.button-container {
+  background-image: url("img/who_pokemon.png");
+  background-size: cover;
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.button {
+  background-color: #F5A623;
+  color: #FFFFFF;
+  -webkit-text-stroke: 0.1em #25588c; /* белая кайма вокруг текста */
+  text-stroke: 0.1em #25588c;
+  font-family: Pokemon, Arial, sans-serif;
+  font-size: 4vw; /* Размер шрифта */
+  padding: 0.5em 1em; /* Отступы от краев кнопки */
+  border-radius: 0.5em; /* Закруглить углы */
+  border: none;
+  position: absolute; /* Абсолютное позиционирование */
+  top: 65%; /* Отступ сверху */
+  left: 19%; /* Отступ слева */
+  animation: pokemon-button-pulse 1s ease-in-out infinite; /* Анимация */
+  text-decoration: none;
+}
+
+@keyframes pokemon-button-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 20px;
+  border: 4px solid #40aaba; /* первый цвет круга */
+  opacity: 1;
+  z-index: -1;
+  animation: pulse 1s ease-out forwards;
+}
+
+.button:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 20px;
+  border: 4px solid #ccebe6; /* второй цвет круга */
+  opacity: 1;
+  z-index: -2;
+  animation: pulse 1s 0.15s ease-out forwards;
+}
+
+@keyframes pulse {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+.pokemon-btn {
+  background-color: #F5A623;
+  color: #FFFFFF;
+  font-family: Pokemon, Arial, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.pokemon-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+.pokemon-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
+}
+
+.pokemon-btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+audio {
+  display: none;
+}

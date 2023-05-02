@@ -1,0 +1,251 @@
+@font-face {
+  font-family: "Pixel1";
+  src: url("//db.onlinewebfonts.com/t/b158a63357ce6f6d3688ae97b06ea560.eot");
+  src: url("//db.onlinewebfonts.com/t/b158a63357ce6f6d3688ae97b06ea560.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/b158a63357ce6f6d3688ae97b06ea560.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/b158a63357ce6f6d3688ae97b06ea560.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/b158a63357ce6f6d3688ae97b06ea560.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/b158a63357ce6f6d3688ae97b06ea560.svg#Mini Pixel-7") format("svg")
+}
+
+@font-face {
+  font-family: "Pokemon";
+  src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot");
+  src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon") format("svg")
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ff5416;
+}
+
+.container {
+  flex-direction: column;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.text-container {
+  text-align: left;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+h1 {
+  text-align: center;
+  -webkit-text-stroke: 0.08em #25588c; /* белая кайма вокруг текста */
+  text-stroke: 0.08em #25588c;
+  font-family: Pokemon, Arial, sans-serif;
+  font-size: 8vw;
+  color: #F5A623;
+}
+
+p {
+  font-family: Pixel1, Arial, sans-serif;
+  font-size: 30px;
+  color: #FFFFFF;
+  line-height: 1.5
+}
+
+text {
+  font-family: Pixel1, Arial, sans-serif;
+  font-size: 25px;
+  color: #FFFFFF;
+  line-height: 1.5
+}
+
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+video {
+  margin: 16px;
+  max-width: 100%;
+  max-height: 30vh;
+}
+
+.pokemon {
+  width: 200px;
+  height: 100px;
+  /* center content using flex box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overlay */
+  box-shadow: 0 0 0 100px inset, 0 0 5px grey;
+  /* hover out transition */
+  transition: box-shadow 1s;
+  float: left;
+  margin: 10px;
+}
+
+
+/* pokemone names */
+
+.pokemon::after {
+  width: 90%;
+  height: 80%;
+  display: block;
+  white-space: pre;
+  font: 12pt 'sigmar one';
+  color: white;
+  border: 2px solid;
+  text-align: center;
+  /* center content using flex box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* hover out transition */
+  transition: opacity 1s .5s;
+}
+
+
+/* reveal pokemone picture on hover */
+
+.pokemon:hover {
+  box-shadow: 0 0 0 5px inset, 0 0 5px grey, 0 0 10px grey inset;
+  transition: box-shadow 1s;
+}
+
+
+/* hide pokemone name on hover */
+
+.pokemon:hover::after {
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+#bulbasaur {
+  background-image: url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/531.png);
+  background-size: cover;
+  color: rgba(71, 121, 94, .9);
+}
+
+#bulbasaur::after {
+  content: 'Мама';
+}
+
+#charmander {
+  background-image: url(http://vignette2.wikia.nocookie.net/pokemon/images/7/73/004Charmander.png/revision/latest/scale-to-width-down/200?cb=20140724195345);
+  background-position: center;
+  color: rgba(221, 86, 63, .9);
+}
+
+#charmander::after {
+  content: 'Стёпа'
+}
+
+#squirtle {
+  background-image: url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/131.png);
+  background-size: cover;
+  color: rgba(65, 102, 114, .9);
+}
+
+#squirtle::after {
+  content: 'Ваня'
+}
+
+#pikachu {
+  background-image: url(https://static.wikia.nocookie.net/pokemon/images/2/21/655Delphox.png);
+  background-size: cover;
+  color: rgba(179, 152, 98, .9);
+}
+
+#pikachu::after {
+  content: 'Галя'
+}
+
+#zha {
+  background-image: url(https://static.wikia.nocookie.net/pokemon/images/3/3e/039Jigglypuff.png);
+  background-size: cover;
+  background-position: center;
+  color: rgba(199, 106, 144, 0.9);
+}
+
+#zha::after {
+  content: 'Жанна'
+}
+
+#ba {
+  background-image: url(https://static.wikia.nocookie.net/pokemon/images/7/70/079Slowpoke.png);
+  background-size: cover;
+  background-position: center;
+  color: rgba(62, 130, 140, 0.9);
+}
+
+#ba::after {
+  content: 'Бабушка'
+}
+
+
+#wrapper {
+  width: auto;
+  height: auto;
+  margin:  auto;
+}
+
+/** page structure **/
+#wrapper {
+  display: block;
+  width: 100%;
+  background: #ff5416;
+  margin: 0 auto;
+  padding: 10px 17px;
+}
+
+#keywords {
+  margin: 0 auto;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+
+#keywords thead {
+  cursor: pointer;
+  background: #c9dff0;
+}
+#keywords thead tr th {
+  font-weight: bold;
+  padding: 12px 30px;
+  padding-left: 42px;
+}
+#keywords thead tr th span {
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+#keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
+  background: #acc8dd;
+}
+
+#keywords thead tr th.headerSortUp span {
+  background-image: url('https://i.imgur.com/SP99ZPJ.png');
+}
+#keywords thead tr th.headerSortDown span {
+  background-image: url('https://i.imgur.com/RkA9MBo.png');
+}
+
+
+#keywords tbody tr {
+  color: #555;
+}
+#keywords tbody tr td {
+  text-align: center;
+  padding: 15px 10px;
+}
+#keywords tbody tr td.lalign {
+  text-align: left;
+}
